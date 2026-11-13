@@ -1,0 +1,51 @@
+{
+  "name": "dsh-temp-snapshot-cleanup",
+  "version": "0.1.0",
+  "description": "Removes orphaned dsh-workspace-changes snapshot directories from the system temporary directory at Host startup",
+  "license": "MIT",
+  "author": "Parettia",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Parettia/dsh-temp-snapshot-cleanup.git"
+  },
+  "homepage": "https://github.com/Parettia/dsh-temp-snapshot-cleanup#readme",
+  "bugs": {
+    "url": "https://github.com/Parettia/dsh-temp-snapshot-cleanup/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cleanup",
+    "disk-space",
+    "temporary-files"
+  ],
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./icon": "./icon.svg",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "test",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale/*.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/schemastery": "^3.18.1"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

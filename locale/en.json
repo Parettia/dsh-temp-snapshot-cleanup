@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Temp snapshot cleanup",
+    "description": "Reclaims disk space from orphaned dsh-workspace-changes snapshot directories: it runs once per Host start, about five seconds after activation, and removes only directories that are direct children of the system temporary directory, named dsh-workspace-changes-XXXXXX, real directories rather than links, carrying their objects snapshot marker, with every timestamp older than this Host process by at least a minute and an age of at least minAgeHours. dryRun is on by default and only logs the candidates and their sizes; turn it off in Plugins > Temp snapshot cleanup to remove them on the next restart. Nothing outside those snapshot directories is touched, no model request is made, and a failed removal is logged as a warning."
+  }
+}

@@ -1,0 +1,16 @@
+# One Host row. After activation it waits `startupDelayMs`, then reports (or
+# removes) orphaned `dsh-workspace-changes-*` snapshot directories under the
+# system temporary directory. `dryRun` stays true until the report has been
+# reviewed: the row's `config` replaces the schema defaults, so every field is
+# restated here.
+- insert:
+    - id: temp-snapshot-cleanup
+      name: dsh-temp-snapshot-cleanup
+      config:
+        enabled: true
+        dryRun: true
+        minAgeHours: 24
+        maxDirsPerRun: 20
+        intervalHours: 0
+        startupDelayMs: 5000
+        tempRoot: ''
